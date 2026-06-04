@@ -1,0 +1,169 @@
+:root {
+    --primary-color: #006600;
+    --primary-color-dark: #003300;
+    --secondary-color: #ca8a04;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --extra-light: #FFFFCC;
+    --max-width: 1200px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: "Abel", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Left column: 25% */
+.sidebar {
+    width: 25%;
+    padding: 3rem;
+    background: #FFFFCC;;
+    overflow-y: auto;
+}
+
+.sidebar h1 {
+    margin-bottom: 1rem;
+}
+
+.sidebar p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* Right column: 75% */
+.gallery {
+    width: 75%;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 2rem;
+    background: #fff;
+}
+
+.photo-card {
+    position: relative;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.photo-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.4s ease;
+}
+
+.photo-card:hover img {
+    transform: scale(1.03);
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    text-align: center;
+    padding: 2rem;
+}
+
+.photo-card:hover .overlay {
+    opacity: 1;
+}
+
+.overlay h3 {
+    margin-bottom: 0.5rem;
+}
+
+nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    z-index: 99;
+    border-bottom: 2px double var(--primary-color-dark);
+}
+
+.nav__content {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 1.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    transition: .3s;
+}
+
+nav .logo a:hover {
+    color: var(--primary-color-dark);
+}
+
+nav .checkbox {
+    display: none;
+}
+
+nav input {
+    display: none;
+}
+
+nav .checkbox i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+    transition: left 0.3s;
+}
+
+
+ul li a {
+    padding: 0.5rem 1 rem;
+    border: 2px solid transparent;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--text-dark);
+    transition: 0.3s;
+}
+
+ul li a:hover {
+    color: var(--secondary-color);
+}
